@@ -1,0 +1,31 @@
+
+  <div class="container" >
+    <div class="indent" >
+      <div class="col-2" style="float: none;width: 500px; padding-left: 230px;color: white" >
+        <div class="box2"  >
+          <div class="border-top">
+            <div class="left-top-corner">
+              <div class="right-top-corner">
+                <div class="inner" style="height: auto" >
+                  <h4>Acesso ao <b>Sistema</b> </h4>
+
+                  <% form_tag sessiom_path do -%>
+                    <p><%= label_tag 'Login' %><br />
+                      <%= text_field_tag 'login', @login %></p>
+
+                    <p><%= label_tag 'Senha' %><br/>
+                      <%= password_field_tag 'password', nil %></p>
+
+                    <p><%= submit_tag 'Entrar' %></p>
+                  <% end %>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

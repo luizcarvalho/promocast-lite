@@ -1,0 +1,56 @@
+<h3>Todas <b>Promoções</b></h3>
+
+<%= link_to 'Criar Promoção', new_promocao_path,:class=>"sbutton" %>
+<br /><br /><br />
+  <% form_for(@search) do |f| %>
+<fieldset>
+    <%= f.label "Programa"  %>    <%= f.text_field :programa_id_equals %><br />
+    <%= f.label "Titulo"  %>    <%= f.text_field :titulo_like %><br />
+    <%= f.label "Inicio"  %>    <%= f.text_field :inicio_like %><br />
+    <%= f.label "Fim"  %>    <%= f.text_field :fim_like %><br />
+    <%= f.label "Multiusuario"  %>    <%= f.text_field :multiusuario_equals %><br />
+    <%= f.label "Premiação"  %>    <%= f.text_field :premiacao_like %><br />
+    <%= f.label "Descrição"  %>    <%= f.text_field :descricao_like %><br />
+    <%= f.label "status"  %>    <%= f.check_box :ativo_equals %><br />
+
+    <%= f.submit "Pesquisar",:class=>"sbutton" %><br />
+</fieldset>
+  <% end %>
+
+<table id="gradient-style" >
+  <tr>
+    <th>Programa</th>
+    <th>Título</th>
+    <th>Início</th>
+    <th>Fim</th>
+    <th>Status</th>
+    <th colspan="3" >Controle</th>
+  </tr>
+
+<% @promocoes.each do |promocao| %>
+  <tr>
+    <td><%=h promocao.programa_id %></td>
+    <td><%=h promocao.titulo %></td>
+    <td><%=h promocao.inicio_tos %></td>
+    <td><%=h promocao.fim_tos %></td>
+    <td><%=h promocao.ativo_tos %></td>
+    <% unless @sortear %>
+    <td><%= link_to 'Detalhes', promocao %></td>
+    <td><%= link_to 'Alterar', edit_promocao_path(promocao) %></td>
+    <td><%= link_to 'Remover', promocao, :confirm => 'Tem certeza?', :method => :delete %></td>
+    <% else %>
+    <td><%= link_to 'Sortear',"/sortear?promocao[id]=#{promocao.id}" %></td>
+    <% end %>
+  </tr>
+<% end %>
+
+  <tfoot>
+    <tr>
+      <td colspan="10" >  <%= will_paginate @ouvintes ,:previous_label => '&laquo; Anterior',:next_label     => 'Próximo &raquo;' %> </td>
+    </tr>
+  </tfoot>
+</table>
+
+<br />
+
+

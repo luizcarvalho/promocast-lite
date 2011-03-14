@@ -1,0 +1,53 @@
+<% if @ouvinte %>
+<div class="container" >
+  <div class="indent" >
+    <div class="col-2" style="float: none;width: 500px; padding-left: 230px" >
+      <div class="box2"  >
+        <div class="border-top">
+          <div class="left-top-corner">
+            <div class="right-top-corner">
+              <div class="inner" style="height: auto" >
+                <h4><b>Sorteado</b> </h4>
+
+                <fieldset style="color: #FFF; font-weight: bold">
+                  <%= label_tag "nome" %>
+                  <%= @ouvinte.nome %><br /><br />
+
+                  <%= label_tag "telefone" %>
+                  <%= @ouvinte.telefone %><br /><br />
+
+                  <%= label_tag "endereco" %>
+                  <%= @ouvinte.endereco %><br /><br />
+
+                  <%= label_tag "nascimento" %>
+                  <%= @ouvinte.nascimento %><br /><br />
+
+                  <%= label_tag "cpf" %>
+                  <%= @ouvinte.cpf %><br /><br />
+
+                  <%= label_tag "rg" %>
+                  <%= @ouvinte.rg %><br /><br />
+
+
+                  <% form_tag({:action=>:finalizar},:id=>"login-form", :method => "post") do  -%>
+
+                    <fieldset>
+                      <%= hidden_field_tag "promocao_id",@promocao.id %>
+                      <%= hidden_field_tag "ouvinte_id",@ouvinte.id %>
+                      <div ><%= submit_tag "Finalizar Promoção e escolher sorteado!",:class=>"submit" %></div>
+                    </fieldset>
+                  <% end %>
+
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% else %>
+
+<div id="errorExplanation"> Nenhum ouvinte cadastrado nessa promoção </div>
+<% end %>

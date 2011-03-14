@@ -1,0 +1,44 @@
+<h3>Todos <b>Programas</b></h3>
+
+<%= link_to 'Novo Programa', new_programa_path,:class=>"sbutton" %>
+<br /><br /><br />
+  <% form_for(@search) do |f| %>
+<fieldset>
+    <%= f.label "Nome"  %>    <%= f.text_field :nome_like %><br />
+    <%= f.label "Descrição"  %>    <%= f.text_field :descricao_like %><br />
+    <%= f.label "Locutores"  %>    <%= f.text_field :locutores_like %><br />
+
+
+    <%= f.submit "Pesquisar",:class=>"sbutton" %><br />
+</fieldset>
+  <% end %>
+
+
+<table id="gradient-style" >
+  <tr>
+    <th>Nome</th>
+    <th>Descricao</th>
+    <th>Locutores</th>
+    <th colspan="3" >Controle</th>
+  </tr>
+
+<% @programas.each do |programa| %>
+  <tr>
+    <td><%=h programa.nome %></td>
+    <td><%=h programa.descricao %></td>
+    <td><%=h programa.locutores %></td>
+    <td><%= link_to 'Detalhes', programa %></td>
+    <td><%= link_to 'Alterar', edit_programa_path(programa) %></td>
+    <td><%= link_to 'Remover', programa, :confirm => 'Tem certeza?', :method => :delete %></td>
+  </tr>
+<% end %>
+
+  <tfoot>
+    <tr>
+      <td colspan="10" >  <%= will_paginate @ouvintes ,:previous_label => '&laquo; Anterior',:next_label     => 'Próximo &raquo;' %> </td>
+    </tr>
+  </tfoot>
+</table>
+
+<br />
+

@@ -1,0 +1,57 @@
+<div class="wrapper">
+  <%= link_to 'Alterar', edit_ouvinte_path(@ouvinte),:class=>"sbutton" %>
+  <a class="slink" id="divider">|</a>
+  <%= link_to 'Voltar', ouvintes_path,:class=>"sbutton" %>
+</div>
+<div class="address">
+  <p>
+    <b>Nome:</b>
+    <%=h @ouvinte.nome %>
+  </p>
+
+  <p>
+    <b>Telefone:</b>
+    <%=h @ouvinte.telefone %>
+  </p>
+
+  <p>
+    <b>Endereco:</b>
+    <%=h @ouvinte.endereco %>
+  </p>
+
+  <p>
+    <b>Nascimento:</b>
+    <%=h @ouvinte.nascimento %>
+  </p>
+
+  <p>
+    <b>Cpf:</b>
+    <%=h @ouvinte.cpf %>
+  </p>
+
+  <p>
+    <b>Rg:</b>
+    <%=h @ouvinte.rg %>
+  </p>
+
+  <p>
+    <b>Status:</b>
+    <%=h @ouvinte.ativo_tos %>
+  </p>
+
+  <table>
+    <tr>
+      <th>Participando das seguintes promocões</th>
+    </tr>
+    <%  @ouvinte.promocoes.each do |promocao|  %>
+      <tr>
+        <td> <%= link_to promocao.titulo,promocao_path(promocao) %>  </td>
+      <% end %>
+    </tr>
+  </table>
+
+
+
+
+
+</div>

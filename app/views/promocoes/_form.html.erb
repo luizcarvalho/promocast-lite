@@ -1,0 +1,33 @@
+<fieldset>
+<% form_for(@promocao) do |f| %>
+  <%= f.error_messages %>
+
+
+    <%= f.label :programa_id %>
+    <%= f.select :programa_id,@programas %><br /><br />
+
+    <%= f.label :titulo,"Título" %>
+    <%= f.text_field :titulo,:size=>50 %><br /><br />
+
+    <%= f.label :inicio,"Início" %>
+    <%= f.date_select :inicio,:order=>[:day,:month,:year ] , :use_month_numbers => true %><br /><br />
+
+    <%= f.label :fim %>
+    <%= f.date_select :fim,:order=>[:day,:month,:year ] , :use_month_numbers => true %><br /><br />
+
+    <%= f.label :ativo %>
+    <%= f.check_box :ativo %><br /><br />
+
+    <%= f.label :multiusuario %>
+    <%= f.check_box :multiusuario %><br /><br />
+
+    <%= f.label :premiacao,"premiação" %>
+    <%= f.text_area :premiacao,:rows=>6,:cols=>50 %><br /><br />
+
+    <%= f.label :descricao,"descricão" %>
+    <%= f.text_area :descricao,:rows=>6,:cols=>50 %><br /><br /><br />
+
+
+    <%= f.submit button_name,:class=>"sbutton" %>
+<% end %>
+</fieldset>

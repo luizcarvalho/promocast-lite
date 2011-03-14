@@ -1,0 +1,28 @@
+<h3>Todos <b>Usuario</b></h3>
+
+<%= link_to 'Cadastrar Usuário', signup_url ,:class=>"sbutton" %><br /><br /><br />
+
+
+<table id="gradient-style">
+  <tr>
+    <th>Login</th>
+    <th>E-mail</th>
+    <th>Controle</th>
+  </tr>
+
+  <% @usuarios.each do |usuario| %>
+    <tr>
+      <td><%=h usuario.login %></td>
+      <td><%=h usuario.login %></td>
+      <td><%= link_to 'Excluir', usuario, :confirm => 'Tem certeza??', :method => :delete %></td>
+    </tr>
+  <% end %>
+  <tfoot>
+    <tr>
+      <td colspan="3" > </td>
+    </tr>
+  </tfoot>
+</table>
+
+<br />
+

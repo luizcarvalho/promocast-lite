@@ -1,0 +1,20 @@
+<fieldset>
+
+<% form_for(@programa) do |f| %>
+  <%= f.error_messages %>
+
+    <%= f.label :nome %>
+    <%= f.text_field :nome %><br /><br />
+
+    <%= f.label :descricao %>
+    <%= f.text_area :descricao,:rows=>6,:cols=>50 %><br /><br />
+
+    <%= f.label :locutores %>
+    <%= f.text_area :locutores,:rows=>6,:cols=>50 %><br /><br />
+    
+    <%= f.label :status %>
+    <%= f.check_box :status,{:checked=>"checked"} %><br /><br />
+
+    <%= f.submit button_name,:class=>"sbutton" %>
+<% end %>
+</fieldset>

@@ -1,0 +1,9 @@
+<div class="wrapper">
+  <%= link_to 'Voltar', ouvintes_path,:class=>"sbutton" %>
+  <a class="slink" id="divider">|</a>
+  <%= link_to 'Detalhes', @ouvinte,:class=>"sbutton" %>
+</div>
+<br /><br />
+
+<h3>Alterar dados do <b>ouvinte</b></h3>
+<%= render :partial=>"form",:locals=>{:button_name=>"Alterar"} %>

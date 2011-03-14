@@ -1,0 +1,44 @@
+
+<%= link_to 'Alterar', edit_promocao_path(@promocao),:class=>"sbutton" %>
+<a>|</a>
+<%= link_to 'Voltar', promocoes_path,:class=>"sbutton" %>
+
+<br /><br />
+<h3>Detalhes da <b>Promoção</b> </h3>
+
+
+<p>
+  <b>Programa:</b>
+  <%=h @promocao.programa.nome rescue "Promoção Sem Programa" %>
+</p>
+
+<p>
+  <b>Título:</b>
+  <%=h @promocao.titulo %>
+</p>
+
+<p>
+  <b>Início:</b>
+  <%=h @promocao.inicio %>
+</p>
+
+<p>
+  <b>Fim:</b>
+  <%=h @promocao.fim %>
+</p>
+
+<p>
+  <b>Multiusuario:</b>
+  <%=h @promocao.multiusuario %>
+</p>
+
+<p>
+  <b>Premiação:</b>
+  <%=h @promocao.premiacao %>
+</p>
+
+<p>
+  <b>Descrição:</b>
+  <%=h @promocao.descricao %>
+</p>
+

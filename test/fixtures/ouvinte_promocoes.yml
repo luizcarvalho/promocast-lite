@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  ouvinte_id: 1
+  promocao_id: 1
+  premiado: false
+
+two:
+  ouvinte_id: 1
+  promocao_id: 1
+  premiado: false

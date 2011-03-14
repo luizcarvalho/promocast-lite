@@ -1,0 +1,59 @@
+<h3>Todos <b>Ouvintes</b></h3>
+
+<%= link_to 'Cadastrar novo ouvinte ouvinte', new_ouvinte_path,:class=>"sbutton" %><br /><br /><br />
+
+
+
+
+  <% form_for(@search) do |f| %>
+<fieldset>
+  <legend>Consulta</legend>
+    <%= f.label "Nome"  %>    <%= f.text_field :nome_like %><br />
+    <%= f.label "Telefone"  %>    <%= f.text_field :telefone_like %><br />
+    <%= f.label "Endereço"  %>    <%= f.text_field :endereco_like %><br />
+    <%= f.label "CPF"  %>    <%= f.text_field :cpf_like %><br />
+    <%= f.label "RG"  %>    <%= f.text_field :rg_like %><br />
+
+    <%= f.submit "Pesquisar",:class=>"sbutton" %><br />
+</fieldset>
+  <% end %>
+
+
+
+
+
+<table id="gradient-style">
+  <tr>
+    <th>Nome</th>
+    <th>Telefone</th>
+    <th>Endereço</th>
+    <th>Nascimento</th>
+    <th>CPF</th>
+    <th>RG</th>
+    <th>Status</th>
+    <th colspan="3" >Controle</th>
+  </tr>
+
+  <% @ouvintes.each do |ouvinte| %>
+    <tr>
+      <td><%=h ouvinte.nome %></td>
+      <td><%=h ouvinte.telefone %></td>
+      <td><%=h ouvinte.endereco %></td>
+      <td><%=h ouvinte.nascimento_tos %></td>
+      <td><%=h ouvinte.cpf %></td>
+      <td><%=h ouvinte.rg %></td>
+      <td><%=h ouvinte.ativo_tos %></td>
+      <td><%= link_to 'Detalhes', ouvinte %></td>
+      <td><%= link_to 'Alterar', edit_ouvinte_path(ouvinte) %></td>
+      <td><%= link_to 'Excluir', ouvinte, :confirm => 'Tem certeza??', :method => :delete %></td>
+    </tr>
+  <% end %>
+  <tfoot>
+    <tr>
+      <td colspan="10" >  <%= will_paginate @ouvintes ,:previous_label => '&laquo; Anterior',:next_label     => 'Próximo &raquo;' %> </td>
+    </tr>
+  </tfoot>
+</table>
+
+<br />
+

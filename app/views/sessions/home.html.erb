@@ -1,0 +1,104 @@
+<%# content_for :banner,false  %>
+<div id="content"  >
+  <ul class="box-list">
+    <li>
+      <div class="box">
+        <div class="border-bot">
+          <div class="right-bot-corner">
+            <div class="left-bot-corner">
+              <div class="inner">
+                <div class="box1">
+                  <a href="<%= ouvintes_path %>">
+                    <div class="inner">
+                      <h4>Buscar<b> Ouvintes</b></h4>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="alt">
+      <div class="box">
+        <div class="border-bot">
+          <div class="right-bot-corner">
+            <div class="left-bot-corner">
+              <div class="inner">
+                <div class="box1">
+                  <a href="<%= new_ouvinte_path %>">
+                    <div class="inner">
+                      <h4>Novo<b> Ouvinte</b></h4>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="last">
+      <div class="box">
+        <div class="border-bot">
+          <div class="right-bot-corner">
+            <div class="left-bot-corner">
+              <div class="inner">
+                <div class="box1">
+                  <a href="/promocoes?sortear=true&search[ativo_equals]=true" >
+                    <div class="inner">
+                      <h4>Realizar <b>Sorteio</b> </h4>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div class="indent" >
+    <div class="wrapper">
+      <div class="col-1"  >
+        <h3>Bem-Vindo ao <b>Promo</b>CAST</h3>
+        <p>PromoCast é um software que permite que você gerencie sua rádio de forma rápida e prática ouvintes, promoções e programas</p>
+        <p>
+          Você  irá encontrar atalhos para maioria das atividades essenciais logo nesta página. No topo há um menu azul que dá acesso aos módulos existentes nesse aplicativo.
+          Logo abaixo temos nossos atalhos são 3 botões que dão acesso direto a atividades mais usuais como: <%= link_to "Cadastrar Ouvinte","#" %>, <%= link_to "Buscar Ouvinte","#" %> e <%= link_to "Realizar Sorteio","#" %>
+        </p>
+        <p class="p0">Esse é mais um projeto da Coordenação de Tecnologia da Informação - Redesat para melhorar mais ainda sua vida</p>
+      </div>
+
+      <!-- SIDE -->
+      <div class="col-2">
+        <div class="box2">
+          <div class="border-top">
+            <div class="left-top-corner">
+              <div class="right-top-corner">
+                <div class="inner">
+                  <h4>Realizar <b>Sorteio</b> </h4>
+
+                  <% form_tag(sortear_url,:id=>"login-form", :method => "get") do -%>
+
+                    <fieldset>
+                      <label>Promoção:</label><br />
+                      <%= select "promocao","id",@promocoes %>
+                      <br /><br /><br />
+                      <div ><%= submit_tag "Sortear" %></div>
+                    </fieldset>
+                  <% end %>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+
+

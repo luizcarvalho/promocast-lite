@@ -1,0 +1,55 @@
+/*  (sl) 2009/10 */
+
+/* body {font-family: "Times New Roman", Times, serif; font-size: 12pt; width: 100%; 0; line-height:1.3em; letter-spacing: normal;} */
+/* letter-spacing:0.2pt; */
+body { background: white; margin: 0 15px 10px 15px; padding: 0; font-size: 14pt; color: #333; line-height: 1.55em;}
+body, #content h2, #content h3, #content h4, ul.postmetadata {  font-family: Georgia, "Times New Roman", Times, serif; display:block; }
+#leftcolumn, #content { width: 100%; margin-right: 0; padding-right: 0; }
+#header,#rightcolumn,#rss,#spnsrlist,#social,#greetbox,#bio, #about, 
+#smashnav-content, #forum,#footer-inner, #spnsrlist,#respond,#function, #logoedtarget, .preload, .ui-tabs-nav, .bar, .rating, .post-ratings, .post-ratings-loading, .offtopic, .soc-icons-bar, .smashpostratingwrapper, iframe, .commentrating, .sub-tabs {display: none;}
+
+blockquote { border-left: 2px solid #ccc; padding-left: 25px; color: #111; font-style: italic; margin-top: 10px; margin-bottom: 10px; background:#fff; }
+#content h2, #content h2 a { font-size: 30pt; line-height: 1.3em; margin-top: 0; padding-top: 0; font-weight: normal; }
+#content h3 { font-size: 23pt; border-bottom: 1px solid #333; }
+#content #leftcolumn h4 {  font-family: Georgia, "Times New Roman", Times, serif; font-size: 19pt; }
+h2, h3, h4, p { orphans: 2; widows: 2; }
+h2 a { display: block; }
+h2 a:after { display: block; margin-top: 12px; font-style: italic; font-size: 0.5em; font-weight: normal; line-height: 1.25em; content: "URL: " attr(href) ""; text-decoration: none; }
+.bio .about { line-height: 1.5em; }
+p { line-height: 1.4em; }
+img + br, a img + br { clear: left; }
+#logo { margin: 0; }
+.post { margin-bottom: 20px; }
+
+pre { background-color: #fefefe; padding: 10px 0; font-size: 0.9em; }
+
+IMG {border: 0px; display: block; clear: right;}
+
+.navigation_tags, .tag-explorer,.browse-tags,.ed,#content .soc-icons-bar,.site,.wp-pagenavi,.count,.post-image,.current-pages, .separator, .network-favicon, .back-to-top {display: none;}
+
+.comment { padding-bottom: 11px; }
+.gravatar, .reply { display: none; }
+.comment-author { float: left; display: inline; margin-right: 8px; }
+.comment .date, .comment .time { font-size: 0.8em;  font-style: italic; } 
+#comment-tabs, .commentlist, .commentlist li { list-style-type: none; }
+.commentlist { margin-left: 0; padding: 0; }
+.commentnumber { float: left; display: inline; background-color: #eee; padding: 5px 7px; margin: -4px 9px 0 0;}
+.depth-1 { margin-left: 0px; }
+.depth-2 { margin-left: 15px; }
+.depth-3 { margin-left: 15px; }
+#comment-tabs { padding: 0; margin: 0; font-size: 2em; font-weight: bold; margin-top: 55px; margin-bottom: 35px; }
+a:link,a:hover,a:focus,a:active,a:visited{color: black; text-decoration: none; }
+/*.the-author a:link:after, a.continue-reading:link:after, .entry a:link:after, .entry a:visited:after { font-style: italic; content: " (" attr(href) ")"; text-decoration: none; color: ##3151a2; }*/
+#copyright {font-style: italic;}
+/* footnoteLinks */
+.the-author a:link:after,
+a.continue-reading:link:after,
+.entry a:link:after,
+.entry a:visited:after {
+	content: " (" attr(href) ") ";
+	font-size: 90%;
+}
+html.noted a:link:after,
+html.noted a:visited:after {
+	content: '';
+}

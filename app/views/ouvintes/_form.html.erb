@@ -1,0 +1,48 @@
+
+<% form_for(@ouvinte) do |f| %>
+  <%= f.error_messages %>
+
+  <fieldset>
+
+    <%= f.label :nome %>
+    <%= f.text_field :nome,:size=>50 %><br />
+
+    <%= f.label :telefone %>
+    <%= f.text_field :telefone %><br />
+
+    <%= f.label :endereco %>
+    <%= f.text_field :endereco,:size=>50%><br />
+
+    <%= f.label :nascimento %>
+    <%= f.date_select :nascimento,:end_year => 1900,:order=>[:day,:month,:year ] ,:start_year => 2011, :use_month_numbers => true %><br />
+
+    <%= f.label :cpf %>
+    <%= f.text_field :cpf %><br />
+
+    <%= f.label :rg %>
+    <%= f.text_field :rg %><br />
+
+    <%= f.label :ativo %>
+    <%= f.check_box :ativo,:checked=>"checked" %><br /><br />
+
+    <%= label_tag "ouvinte_promocoes","Promoções" %>
+    <span style="font-size: 12px;color:gray" >Segure CTRL para selecionar mais de uma opção</span>
+    <div id="select_promo">
+      <select id="promocoes[]" multiple="multiple" name="promocoes[]" size="10" style="width: 500px;">
+        <% @promocoes.each do |promocao_op| %>
+          <%= promocao_op %>
+        <% end %>
+
+      </select>
+    </div>
+
+    <br /><br /><br />
+    <label>&nbsp;</label>
+    <%= f.submit button_name,:class=>"sbutton" %><br />
+
+
+  </fieldset>
+
+
+<% end %>
+
