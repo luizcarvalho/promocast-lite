@@ -45,7 +45,7 @@ class OuvintesController < ApplicationController
   # POST /ouvintes.xml
   def create
     @ouvinte = Ouvinte.new(params[:ouvinte])
-    @promocoes = Promocao.find(params[:promocoes])
+    @promocoes = Promocao.find_all_by_id(params[:promocoes])
     @ouvinte.promocoes  = @promocoes
     #@ouvinte
 
@@ -65,7 +65,7 @@ class OuvintesController < ApplicationController
   # PUT /ouvintes/1.xml
   def update
     @ouvinte = Ouvinte.find(params[:id])
-    @promocoes = Promocao.find(params[:promocoes])
+    @promocoes = Promocao.find_all_by_id(params[:promocoes])
     @ouvinte.promocoes  = @promocoes
     respond_to do |format|
       if @ouvinte.update_attributes(params[:ouvinte])
