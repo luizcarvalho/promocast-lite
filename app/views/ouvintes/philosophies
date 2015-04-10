@@ -1,0 +1,14 @@
+  <% @philosophies.each do  %>
+      <%= "Convention over Configuration" %> 
+      <%= "Don’t Repeat Yourself" %> 
+      <%= "Opinionated, every exist a Best Way" %> 
+      <%= "Is Omakase, I’ll leave it to you." %> 
+      <%= "Favors readability and variety over concision and perfection" %>
+      <%= "Programming languages must feel natural to programmers. (Matz)" %> 
+      <%= "I wanted a scripting language that was more powerful than Perl, and more object-oriented than Python. (Matz)" %>
+      <%= "I believe people want to express themselves when they program. They don't want to fight with the language. (Matz)" %> 
+      <%= "I tried to make people enjoy programming and concentrate on the fun and creative part of programming when they use Ruby. (Matz)" %> 
+      <%= "For me the purpose of life is partly to have joy. 
+              Programmers often feel joy when they can concentrate on the creative side of programming, 
+              So Ruby is designed to make programmers happy. (Matz)" %>
+  <% end %>
